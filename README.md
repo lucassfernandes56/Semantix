@@ -10,33 +10,36 @@ Quando usar alguma referência ou biblioteca externa, informe no arquivo README 
 
 1. Qual​ o objetivo​ do​ comando​ *cache​* em​ Spark?
 
-*R:* 
+ *R:* Ó objetivo é permitir que os arquivos que estão sendo trabalhados sejam armazenados em cache, poupando processamentos desnecessários do tipo "lazy" que ja foram feitos e salvando-os na memória.
 
 2. O​ mesmo​ código​ implementado​ em​ Spark​ é normalmente​ mais​ rápido​ que​ a implementação​ equivalente​ em
 MapReduce.​ Por​ quê?
 
-*R:*
+*R:* Um dos principais fatores que tornam as aplicações desenvolvidas em MapReduce mais lentas que o Spark é o uso da memória. É bastante comum ter que rodar diversas rotinas em sequência em MapReduce, nesse cenário cada resultado é armazenado no disco e para ser passado para a rotina seguinte tem que ser lido do disco novamente, tornando o processo ineficiênte. O Spark consegue um desempenho superior por permitir que os resultados sejam passados imediatamente para as rotinas seguitnes atraves do uso do "caching", onde os dados são armazenados diretamente na memória.
 
-3. Qual​ é a função​ do​ *SparkContext​*?
+1. Qual​ é a função​ do​ *SparkContext​*?
 
-*R:*
+*R:* Tem como função permitira as configurações que vão ser utilizadas na alocação de recursos do Spark, como memória e processadores, numero de cores. Também usa-se o SparkContext para criar RDDs, colocar rotinas em execução.
 
 4. Explique​ com​ suas​ palavras​ o que​ é *Resilient​ Distributed​ Datasets​​* (RDD).
 
-*R:*
+*R:* RDDs são a principal abstração de dados do Spark. Eles são chamados Resilient por serem tolerantes à falha, isto é, são capazes de recomputar partes de dados perdidas devido a falhas nos nós e são Distributed porque podem estar divididos em partições através de diferentes nós em um cluster.
 
 5. *GroupByKey​* é menos​ eficiente​ que *reduceByKey​* em​ grandes​ dataset.​ Por​ quê?
 
-*R:*
+*R:* Utilizando o ReduceByKey  o Spark realiza a operação desejada em todos os elementos com a mesma "key" (chave) para obter um resultado parcial antes de enviar para os executores que calculam o resultado final, ou seja, o conjunto de dados que vai ser transferido já está pré agrupado, sendo assim um conjunto menor. 
+Utilizando o GroupByKey e a agregação em seguida, todos os elementos são enviados sem uma pré execução, resultado em uma quantidade enorme de dados sendo transferidos. Essa quantidade pode passar a quantidade alocada de memória, exigindo a utilização do disco e diminuindo ainda mais a performance.
 
-6. Explique o que o código Scala abaixo faz.
+1. Explique o que o código Scala abaixo faz.
 ```scala
 val textFile​​ = sc​.textFile("hdfs://..."​)
-val​​ counts​​ = textFile​.flatMap​(line​​ => line​.split​("")).map​(word​​ =>​​ (word​,​ 1)).reduceByKey​(_+_)
+val​​ counts​​ = textFile​.flatMap​(line​​ => line​.split​(" "))
+                    .map​(word​​ =>​​ (word​,​ 1))
+                    .reduceByKey​(_+_)
 counts​.saveAsTextFile​("hdfs://..."​)
 ```
 
-*R:*
+*R:* Nesse código Scala um arquivo texto é lido (1ª linha), em seguida, cada linha do arquivo é quebrada em uma sequência de palavras (separadas por espaço, 2ª linha). Cada palavra é transformada para o tipo mapa, com "key" sendo a palavra e o "value" sendo 1 (3ª linha). Cada elemento mapeado é somado por "key" (4ª linha) e por fim o RDD contendo a quantidade de cada palavra no arquivo inicial é escrito em um arquivo texto.
 
 ## HTTP​ requests​ to​ the​ NASA​ Kennedy​ Space​ Center​ WWW​ server
 *Fonte​ oficial​ do​ dateset​:* http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html
