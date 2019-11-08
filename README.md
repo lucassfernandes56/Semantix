@@ -68,16 +68,73 @@ Obs: toda a análise foi feita com os datasets de julho e agosto combinados.
 3. Os 5 URLs que mais causaram erro 404.
 
 *R:* 
-1. /pub/winvn/readme.txt -> 2004 errors 404
-2. /pub/winvn/release.txt -> 1732 errors 404
-3. /shuttle/missions/STS-69/mission-STS-69.html -> 683 errors 404
-4. /shuttle/missions/sts-68/ksc-upclose.gif -> 428 errors 404
-5. /history/apollo/a-001/a-001-patch-small.gif -> 384 errors 404
-
+* /pub/winvn/readme.txt -> 2004 erros do tipo 404
+* /pub/winvn/release.txt -> 1732 erros do tipo 404
+* /shuttle/missions/STS-69/mission-STS-69.html -> 683 erros do tipo 404
+* /shuttle/missions/sts-68/ksc-upclose.gif -> 428 erros do tipo 404
+* /history/apollo/a-001/a-001-patch-small.gif -> 384 erros do tipo 404
 
 4. Quantidade de erros 404 por dia.
 
 *R:*
+* 01/Jul/1995	-> 316 erros do tipo 404
+* 02/Jul/1995	-> 291 erros do tipo 404
+* 03/Jul/1995	-> 474 erros do tipo 404
+* 04/Jul/1995	-> 359 erros do tipo 404
+* 05/Jul/1995	-> 497 erros do tipo 404
+* 06/Jul/1995	-> 640 erros do tipo 404
+* 07/Jul/1995	-> 570 erros do tipo 404
+* 08/Jul/1995	-> 302 erros do tipo 404
+* 09/Jul/1995	-> 348 erros do tipo 404
+* 10/Jul/1995	-> 398 erros do tipo 404
+* 11/Jul/1995	-> 471 erros do tipo 404
+* 12/Jul/1995	-> 471 erros do tipo 404
+* 13/Jul/1995	-> 532 erros do tipo 404
+* 14/Jul/1995	-> 413 erros do tipo 404
+* 15/Jul/1995	-> 254 erros do tipo 404
+* 16/Jul/1995	-> 257 erros do tipo 404
+* 17/Jul/1995	-> 406 erros do tipo 404
+* 18/Jul/1995	-> 465 erros do tipo 404
+* 19/Jul/1995	-> 639 erros do tipo 404
+* 20/Jul/1995	-> 428 erros do tipo 404
+* 21/Jul/1995	-> 334 erros do tipo 404
+* 22/Jul/1995	-> 192 erros do tipo 404
+* 23/Jul/1995	-> 233 erros do tipo 404
+* 24/Jul/1995	-> 328 erros do tipo 404
+* 25/Jul/1995	-> 461 erros do tipo 404
+* 26/Jul/1995	-> 336 erros do tipo 404
+* 27/Jul/1995	-> 336 erros do tipo 404
+* 28/Jul/1995	-> 94 erros do tipo 404
+* 01/Aug/1995	-> 243 erros do tipo 404
+* 03/Aug/1995	-> 304 erros do tipo 404
+* 04/Aug/1995	-> 346 erros do tipo 404
+* 05/Aug/1995	-> 236 erros do tipo 404
+* 06/Aug/1995	-> 373 erros do tipo 404
+* 07/Aug/1995	-> 537 erros do tipo 404
+* 08/Aug/1995	-> 391 erros do tipo 404
+* 09/Aug/1995	-> 279 erros do tipo 404
+* 10/Aug/1995	-> 315 erros do tipo 404
+* 11/Aug/1995	-> 263 erros do tipo 404
+* 12/Aug/1995	-> 196 erros do tipo 404
+* 13/Aug/1995	-> 216 erros do tipo 404
+* 14/Aug/1995	-> 287 erros do tipo 404
+* 15/Aug/1995	-> 327 erros do tipo 404
+* 16/Aug/1995	-> 259 erros do tipo 404
+* 17/Aug/1995	-> 271 erros do tipo 404
+* 18/Aug/1995	-> 256 erros do tipo 404
+* 19/Aug/1995	-> 209 erros do tipo 404
+* 20/Aug/1995	-> 312 erros do tipo 404
+* 21/Aug/1995	-> 305 erros do tipo 404
+* 22/Aug/1995	-> 288 erros do tipo 404
+* 23/Aug/1995	-> 345 erros do tipo 404
+* 24/Aug/1995	-> 420 erros do tipo 404
+* 25/Aug/1995	-> 415 erros do tipo 404
+* 26/Aug/1995	-> 366 erros do tipo 404
+* 27/Aug/1995	-> 370 erros do tipo 404
+* 28/Aug/1995	-> 410 erros do tipo 404
+* 29/Aug/1995	-> 420 erros do tipo 404
+* 30/Aug/1995	-> 571 erros do tipo 404
+* 31/Aug/1995	-> 526 erros do tipo 404
 
 5. O total de bytes retornados.
 

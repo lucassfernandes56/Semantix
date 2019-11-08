@@ -44,4 +44,15 @@ print('\nTop 5 endpoints causing error 404:')
 for endpoint, count in top_five:
     print(endpoint, count)
 
+# 404 errors per day
+def daily_count(rdd):
+    days = rdd.map(lambda line: line.split('[')[1].split(':')[0])
+    counts = days.map(lambda day: (day, 1)).reduceByKey(add).collect()
+    return counts
+
+daily_counts = daily_count(total_errors_404)
+print('\n404 errors per day:')
+for day, count in daily_counts:
+    print(day, count)
+
 sc.stop()
