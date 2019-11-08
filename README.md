@@ -67,7 +67,13 @@ Obs: toda a análise foi feita com os datasets de julho e agosto combinados.
 
 3. Os 5 URLs que mais causaram erro 404.
 
-*R:*
+*R:* 
+1. /pub/winvn/readme.txt -> 2004 errors 404
+2. /pub/winvn/release.txt -> 1732 errors 404
+3. /shuttle/missions/STS-69/mission-STS-69.html -> 683 errors 404
+4. /shuttle/missions/sts-68/ksc-upclose.gif -> 428 errors 404
+5. /history/apollo/a-001/a-001-patch-small.gif -> 384 errors 404
+
 
 4. Quantidade de erros 404 por dia.
 
