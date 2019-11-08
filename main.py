@@ -1,3 +1,7 @@
+# Datasets:
+# 	July -> ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz
+# 	August -> ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz
+
 from pyspark import SparkConf, SparkContext
 from operator import add
 
@@ -55,4 +59,19 @@ print('\n404 errors per day:')
 for day, count in daily_counts:
     print(day, count)
 
+# Total byte count
+def accumulated_byte_count(rdd):
+    def byte_count(line):
+        try:
+            count = int(line.split(" ")[-1])
+            if count < 0:
+                raise ValueError()
+            return count
+        except:
+            return 0
+        
+    count = rdd.map(byte_count).reduce(add)
+    return count
+
+print('Total byte count: %s' % accumulated_byte_count(dataset))
 sc.stop()

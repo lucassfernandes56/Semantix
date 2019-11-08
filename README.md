@@ -138,13 +138,12 @@ Obs: toda a análise foi feita com os datasets de julho e agosto combinados.
 
 5. O total de bytes retornados.
 
-*R:*
-
+*R:* 65524314915 bytes retornados
 
 ## Bibliotecas e versões utilizadas
 
-* Java 11.0.4
+* Java 8
 * Python 3.7
 * Spark 2.4.4
 * Scala 2.11.12 
-* sbt 1.3.3
+* Pyspark 2.4.4
