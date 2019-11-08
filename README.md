@@ -55,14 +55,15 @@ não​ puder​ ser​ identificado.
 * *Código​ do​ retorno​ HTTP*
 * *Total​ de​ bytes​ retornados*
 
+Obs: toda a análise foi feita com os datasets de julho e agosto combinados.
 
 1. Número de hosts únicos.
 
-*R:* 55 hosts únicos em Julho e 53 em Agosto.
+*R:* 55 hosts únicos.
 
 2. O total de erros 404.
 
-*R:*
+*R:* 20901 erros do tipo 404.
 
 3. Os 5 URLs que mais causaram erro 404.
 

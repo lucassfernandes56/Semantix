@@ -6,16 +6,28 @@ spark_conf = (SparkConf()
          .setAppName("Semantix challenge"))
 sc = SparkContext(conf = spark_conf)
 
-july = sc.textFile('data/NASA_access_log_Jul95')
-july = july.cache()
+dataset_july = sc.textFile('data/NASA_access_log_Jul95')
+dataset_august = sc.textFile('data/NASA_access_log_Aug95')
 
-august = sc.textFile('data/NASA_access_log_Aug95')
-august = august.cache()
+# combine both datasets
+dataset = dataset_july.union(dataset_august)
+dataset = dataset.cache()
 
 # number of distinct hosts
-july_count = july.flatMap(lambda line: line.split(' ')[0]).distinct().count()
-august_count = august.flatMap(lambda line: line.split(' ')[0]).distinct().count()
-print('Distinct hosts on July: %s' % july_count)
-print('Distinct hosts on August %s' % august_count)
+hosts_count = dataset.flatMap(lambda line: line.split(' ')[0]).distinct().count()
+print('Distinct hosts: %s' % hosts_count)
+
+# number of 404 errors
+def response_code_404(line):
+    try:
+        code = line.split(' ')[-2]
+        if code == '404':
+            return True
+    except:
+        pass
+    return False
+    
+total_errors_404 = dataset.filter(response_code_404).cache()
+print('total 404 errors %s' % total_errors_404.count())
 
 sc.stop()
